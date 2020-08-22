@@ -1,0 +1,134 @@
+﻿using Microsoft.VisualBasic;
+using System;
+using System.Reflection.Metadata.Ecma335;
+
+namespace Adventure_Game
+{
+    class Program
+    {
+        static void Main(string[] args)
+        {
+            String Name = "";
+            String choice = "";
+            String help = "";
+            bool cure = false;
+            bool goblin = false;
+            bool quest1 = false;
+            bool potion = false;
+            
+
+            Console.WriteLine("The King's Curse ");
+            Console.WriteLine("What is your name brave adventure ? ");
+            Name = Console.ReadLine();
+            Console.WriteLine("Hello "+ Name + "!" );
+            Console.WriteLine("Someone has turned the King into stone. Your Quest is to remove the curse !!! ");
+
+            while (cure== false)
+            {
+             Console.WriteLine("                                                                     ");
+             Console.WriteLine("Where do you want to go ? (A,B,C or D ?)");
+             Console.WriteLine("A)Castle B)The Old Hags Hut C) The Wild Forest D) Fortress of Doom ? ");
+             choice = Console.ReadLine();
+             choice=choice.ToLower();
+
+                if (choice == "a")
+                {
+                    if (potion == true)
+                    {
+                        cure = true;
+                    
+                    
+                    }
+                   
+                    else
+                    {
+                        Console.WriteLine("You go back to the castle with no cure. ");
+
+                    }
+
+
+
+                }
+
+                if (choice == "b" )
+                {
+                    if (quest1 == true && goblin == true) 
+                    {
+                        Console.WriteLine("The old hag thank you for your help and wish you the best in your quest. ");
+
+                    }
+
+                   
+
+                    
+                    if (quest1 == false && goblin == true )
+                    {
+                       Console.WriteLine("As you approach the old hag's hut, you see an old hag, smiling at you. ");
+                       Console.WriteLine("she thank you for saving her pet goblin and is willing to help your quest. ");
+                       Console.WriteLine("she tells you that there is a magical potion in the Fortress of Doom. ");
+                       Console.WriteLine("It will cure the King, she provides you with a map and the location. ");
+                        quest1 = true;
+                    }
+
+                    if (quest1 == false && goblin == false)
+                    {
+                     Console.WriteLine(" As you approach the old hag's hut, an army of crows chase you away. ");
+
+                    }
+
+                  }
+
+                if (choice == "c")
+
+                {
+                    
+                    Console.WriteLine("You enter the wild forest... ");
+
+                    if (goblin == false)
+                    {
+                        Console.WriteLine("You see a goblin trapped in some bramble do you help ? (YES OR NO)");
+                        help = Console.ReadLine();
+                        help = help.ToLower();
+
+                        if (help == "yes")
+                        {
+                            Console.WriteLine("You help the goblin, the goblins runs back home");
+
+                            goblin = true;                          
+                        }
+                    }
+
+                    else
+                    {
+                      Console.WriteLine("You see nothing of importance here, maybe you will go hunting later");
+                    }
+
+                }
+
+                if (choice == "d")
+                {
+
+                    if (quest1 == true && potion== false )
+                    {
+                     Console.WriteLine("You sneak into the Fortress of Doom and after an epic adventure you find the magical potion. ");
+                     potion = true;                    
+                    }
+
+                    else
+                    {
+                        Console.WriteLine("You arrive at the Fortress of Doom but with no purpose, you quickly leave. ");
+                    }
+                }
+
+            }
+
+            Console.WriteLine("You pour the magical potion over the King's stone body.  ");
+            Console.WriteLine("It has worked, the curse is removed.");
+            Console.WriteLine("You are rewarded with a 1000 gold. ");
+            Console.WriteLine("                                                              ");
+            Console.WriteLine("                                                               ");
+            Console.WriteLine("                             GAME OVER                        ");
+
+        }
+    }
+}
