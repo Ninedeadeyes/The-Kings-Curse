@@ -135,7 +135,7 @@ namespace Adventure_Game
                             Console.WriteLine("                   GAME OVER                   ");
                             Console.WriteLine("Press any button to exit the game ");
                             Console.ReadLine();
-                            System.Environment.Exit(1);
+                            System.Environment.Exit(0);
                             }
 
                         }
