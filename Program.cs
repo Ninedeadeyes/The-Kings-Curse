@@ -7,18 +7,18 @@ namespace Adventure_Game
     class Program
     {
         static void Main(string[] args)
-        {
+        {   
             String Name = "";
-            String end = "";
-            String choice = "";
-            String help = "";
+            String Choice = "";
+            String Help = "";
+            String Answer = "";
             bool cure = false;
             bool goblin = false;
             bool quest1 = false;
             bool potion = false;
             
 
-            Console.WriteLine("The King's Curse ");
+            Console.WriteLine("                                    The King's Curse                                   ");
             Console.WriteLine("What is your name brave adventurer ? ");
             Name = Console.ReadLine();
             Console.WriteLine("Hello "+ Name + "!" );
@@ -29,10 +29,10 @@ namespace Adventure_Game
              Console.WriteLine("                                                                     ");
              Console.WriteLine("Where do you want to go ? (A,B,C or D)");
              Console.WriteLine("A) Castle  B) The Old Hags Hut  C) The Wild Forest  D) Fortress of Doom");
-             choice = Console.ReadLine();
-             choice=choice.ToLower();
+             Choice = Console.ReadLine();
+             Choice=Choice.ToLower();
 
-                if (choice == "a")
+                if (Choice == "a")
                 {
                     if (potion == true)
                     {
@@ -51,7 +51,7 @@ namespace Adventure_Game
 
                 }
 
-                if (choice == "b" )
+                if (Choice == "b" )
                 {
                     if (quest1 == true && goblin == true) 
                     {
@@ -64,10 +64,11 @@ namespace Adventure_Game
                     
                     if (quest1 == false && goblin == true )
                     {
-                       Console.WriteLine("As you approach the old hag's hut, you see an old hag, smiling at you. ");
+                       Console.WriteLine("As you approach the old hag's hut, you see an old hag smiling at you. ");
                        Console.WriteLine("she thank you for saving her pet goblin and is willing to help your quest. ");
                        Console.WriteLine("she tells you that there is a magical potion in the Fortress of Doom. ");
-                       Console.WriteLine("It will cure the King, she provides you with a map and the location. ");
+                       Console.WriteLine("It will cure the King. She provides you with a map and the location.  ");
+                       Console.WriteLine("Before you leave she informs you of the fortress password 'DARKSTONE'. ");
                         quest1 = true;
                     }
 
@@ -79,7 +80,7 @@ namespace Adventure_Game
 
                   }
 
-                if (choice == "c")
+                if (Choice == "c")
 
                 {
                     
@@ -88,10 +89,10 @@ namespace Adventure_Game
                     if (goblin == false)
                     {
                         Console.WriteLine("You see a goblin trapped in some bramble do you help ? (YES OR NO)");
-                        help = Console.ReadLine();
-                        help = help.ToLower();
+                        Help = Console.ReadLine();
+                        Help = Help.ToLower();
 
-                        if (help == "yes")
+                        if (Help == "yes")
                         {
                             Console.WriteLine("You help the goblin, the goblins runs back home");
 
@@ -106,13 +107,40 @@ namespace Adventure_Game
 
                 }
 
-                if (choice == "d")
+                if (Choice == "d")
                 {
 
                     if (quest1 == true && potion== false )
                     {
-                     Console.WriteLine("You sneak into the Fortress of Doom and after an epic adventure you find the magical potion. ");
-                     potion = true;                    
+
+                        while (potion == false)
+                        {
+
+                            Console.WriteLine("You stand at the entrance of the Fortress of Doom.");
+                            Console.WriteLine("You hear a booming voice.. 'Halt, what is the password ? ");
+                            Answer = Console.ReadLine();
+                            Answer = Answer.ToLower();
+
+                            if (Answer == "darkstone")
+                            {
+                                Console.WriteLine("They allow you into the Fortress and you quickly locate the magical potion. ");
+                                potion = true;
+                            }
+
+                            else 
+
+                            {
+                            Console.WriteLine(" INCORRECT !! NOW FEAR MY POWER !! ");
+                            Console.WriteLine(" A great fireball consumes your body and ends your adventure   ");
+                            Console.WriteLine("                   GAME OVER                   ");
+                            Console.WriteLine("Press any button to exit the game ");
+                            Console.ReadLine();
+                            System.Environment.Exit(1);
+                            }
+
+                        }
+                            
+                                      
                     }
 
                     else
@@ -132,7 +160,7 @@ namespace Adventure_Game
             Console.WriteLine("                                                              ");
             Console.WriteLine("                                                               ");
             Console.WriteLine("Press any button to exit the game ");
-            end = Console.ReadLine();
+            Console.ReadLine();
         }
     }
 }
