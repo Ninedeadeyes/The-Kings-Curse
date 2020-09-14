@@ -19,7 +19,7 @@ while cure==False:
     print("Where do you want to go ? (A,B,C or D ")
     print ("A) Castle  B) The Old Hags Hut  C) The Wild Forest  D) Fortress of Doom")
     Choice=input()
-    Choice.lower()
+    Choice=Choice.lower()
 
 
     if Choice=="a":
