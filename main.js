@@ -1,26 +1,21 @@
-
 let cure=false;
 let goblin=false;
 let quest1=false;
 let potion=false;
 let goodEnding=false;
-
 let char=prompt("What is your name brave adventurer ? ");
 
 let begin="hello "+char+".";
 begin+=" Someone has turned the King into stone. Your Quest is to remove the curse !!!";
 alert(begin)
 
-
 while (cure===false)
 {
-
     let Choice=prompt("Where do you go ? A) Castle  B) The Old Hags Hut                                  C) The Wild Forest  D) Fortress of Doom" );
     Choice=Choice.toLowerCase();
 
     if (Choice==="a")
     {
-
         if (potion===true)
         {
             cure=true;
@@ -31,12 +26,10 @@ while (cure===false)
         {
             alert("You go back to the castle with empty hands.");
         }
-
     }
     
     else if (Choice==="b")
     {
-
         if (quest1===true && goblin===true)
         {
             alert("The old hag thank you for your help and wish you the best in your quest.");
@@ -51,7 +44,6 @@ while (cure===false)
             speech+=("Before you leave she informs you of the fortress password 'DARKSTONE'");
             alert(speech);
             quest1=true;
-
         }
 
         else
@@ -62,7 +54,6 @@ while (cure===false)
     }
 
     else if  (Choice==="c")
-
     {
 
         if (goblin===false)
@@ -74,20 +65,17 @@ while (cure===false)
             {
                 alert("You help the goblin, the goblin runs back home.");
                 goblin=true
-            }
-            
+            }            
         }
         
         else
         {
             alert("You see nothing of importance here, maybe you will go hunting later");
         }
-
     }
 
     else if  (Choice==="d")
     {
-
         if (quest1===true && potion===false)
         {
             alert("You stand at the entrance of the Fortress of Doom.")
@@ -98,7 +86,6 @@ while (cure===false)
             {
                 alert("They allow you into the Fortress and you quickly locate the magical potion.")
                 potion=true
-
             }
             else
             {
@@ -107,25 +94,19 @@ while (cure===false)
                 gameOver+=("                   GAME OVER                   ")
                 alert(gameOver);
                 break
-
             }
-
         }
         
         else
         {
             alert("You arrive at the Fortress of Doom but with no purpose, you quickly leave.");
-       
         }
-
     }
 
     else
     {
         alert("Invalid Choice")
     }
-
-
 }
 
 if (goodEnding===true)
@@ -140,5 +121,4 @@ if (goodEnding===true)
 else
 {
    alert("Good Bye !!");
-
 }
