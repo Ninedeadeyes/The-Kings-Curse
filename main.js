@@ -73,8 +73,7 @@ while (cure===false){
             
             else{
                 let gameOver=(" INCORRECT !! NOW FEAR MY POWER !! ")
-                gameOver+=("A great fireball consumes your body and ends your adventure")
-                gameOver+=("                   GAME OVER                   ")
+                gameOver+=("A great fireball consumes your body and ends your adventure. (GAME OVER )   ")
                 alert(gameOver);
                 break
             }
@@ -96,8 +95,4 @@ if (goodEnding===true){
     ending+=("You are rewarded with 10,000 gold !!! ");
     ending+= ("           GAME OVER                   ");
     alert(ending);
-}
-
-else{
-   alert("Good Bye !!");
 }
